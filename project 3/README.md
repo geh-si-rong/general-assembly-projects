@@ -1,9 +1,5 @@
 # **Project 3: Reddit API & Classification**
 
-<table> <tr ><td bgcolor = "white"><img src="../images/cmblogo.png" style="float: centre; margin: 20px; width, height: 50px"><td bgcolor = "white"></td>  
-    <td bgcolor = "white"><img src="../images/bumblelogo.png" style="float: centre; margin: 20px; width: 50px, height: 50px"></td>
-    </table>
-
 ## **Problem Statement**
 
 The proliferation of online dating apps since 2013 has revolutionized the <a href='https://www.businessofapps.com/data/dating-app-market/'>online dating industry</a> , where users are spoilt for choice with over almost 20 different apps to choose from.  As part of a consultancy firm offering data-driven analysis and insights to such dating companies, we identify the most frequently-
