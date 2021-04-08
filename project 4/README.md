@@ -36,6 +36,7 @@ Hyperparameter tuning was done to obtain the best training and cross-validated s
 
 
 ## **Data dictionary**
+
 This dictionary is not exhaustive and includes only original features from raw datasets provided. These are the final features are used to train the models.
 <br>
 Unlisted features with suffixes are computed from original data. For example, "rolling_14" means moving average over 14 days while "lag_7" means data is shifted by 7 days. All are of float type.
@@ -77,6 +78,23 @@ wnv|int|west nile virus: 1 for present, 0 for absent|
 
 ## **Cost-Benefit Analysis**
 
+As part of our cost-benefit analysis, we studied research papers which highlighted that an estimated \\$778 million was incurred in both short-term and long-term, direct and indirect medical costs associated with the WNV disease, over a 15-year period from 1999 to 2014 across the US.
+
+<a href="https://wwwnc.cdc.gov/eid/article/16/3/09-0667_article">Louisiana state data</a> showed that total epidemic costs were around \\$20 million for 329 cases, which averages to about \\$61,000 per infected case. We also explored a 2005 California economic cost analysis of the virus where the total economic impact was $2.98 million for 163 cases. This averaged the economic impact to around \\$18,282 per case, whereas vector control cost was \\$701,790. Their analysis also revealed that only <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3322011/">15 cases</a> of WNV would need to be prevented to justify the cost of the pesticide spraying.
+
+However, their analysis is not backed up by our EDA process. Spatial data showing the spray locations did not show any noticeable reductions in the WNV-positive mosquito hot spot, thus we would recommend alternative measures to use in conjunction with the spraying.
+
+To increase the cost-effectiveness of pesticide spraying, we advise against spraying when average wind speeds are high (i.e below 10 mph) to reduce the occurrence of <a href="https://crops.extension.iastate.edu/cropnews/2017/01/wind-speed-and-herbicide-application#:~:text=specify%2010%20MPH%20as%20the,spray%20pressure%2C%20etc.).">spray drift</a>. Also, more mosquitoes tend to be caught in traps when wind speeds are lower. Spraying should be avoided above 86°F as the higher temperatures would cause pesticide droplets to <a href="https://grdc.com.au/__data/assets/pdf_file/0024/248181/GRDC-Weather-Essentials-for-Pesticide-Application-2017.pdf">evaporate faster</a> than in cooler air. Results from the EDA showed that the virus is only prevalent during the months of July to September, and thus any efforts to reduce the mosquito population should be focused on this time period.
+
+We recommend that The Department of Public Health consider cost-friendly measures such as eliminating mosquito breeding grounds by covering up areas where water tends to collect and remain stagnant, e.g still ponds, flower pots, rainwater barrels, etc. preventing excessive breeding after periods of heavy rainfall. This is backed up by our EDA which shows an increase in WNV counts after a spike in the precipitation total. In addition, mosquito bites can also be reduced by using mosquito repellent, and wearing long pants and long-sleeves.
+
+Overall, our findings show that the benefits of increasing pesticide spraying may not outweigh the costs incurred. Therefore, we propose a combination of proactive (eg. spraying of pesticides)and reactive (eg. cover up mosquito breeding grounds) measures to combat the spread of the WNV in a more cost-efficient manner.
 
 
 ## **Conclusions and Recommendations**
+
+Our best performing model is SVM with a test accuracy score of 85.4%. Although accuracy provides an overview of the model's performance, we need to consider the other metrics to gain more meaningful insights to guide the decisions of the Chicago Department of Public Health.
+
+Other key metrics include the AUC, which shows that our model is 78.8% capable of distinguishing between WNV-positive and WNV-negative classes. We also note the recall rate which indicates that 79.8% of the actual WNV-positive cases were correctly classified.
+
+Based on these 3 metrics, we conclude that our model has performed relatively well in its classification of WNV-positive mosquitoes. This, in conjunction with the findings from the EDA and cost-benefit analysis, would help the Department of Public Health in making better decisions on when and where to spray pesticides to combat the spread of the WNV-virus. 
