@@ -1,4 +1,5 @@
-# **Capstone Project: Spotify Song Popularity Predictor & Song Recommendation System**
+# **Project: Algo-Rhythms**
+## **The Spotify Song Popularity Predictor & Song Recommender System**
 
 ## **Introduction**
 
@@ -11,14 +12,35 @@ However, despite their numerous algorithm-designed features for their users, we 
 ## **Problem Statement**
 
 The aims of this project are two-fold:
-- Predict the popularity of a song based on its musical features (eg. acousticness, energy, tempo, etc) to identify the ideal blend of features characteristic of popular songs
-- Create a genre recommender system that builds a playlist of songs with features similar to the genre selected.
-
-
+- Predict the popularity of a song based on its musical features (eg. acousticness, energy, tempo, etc) to identify the ideal blend of features characteristic of popular songs.
+- Based on the key music features, build a song recommender system that returns a playlist of 30 songs with musical features similar to a particular genre (eg. newcastle nsw indie). A subset of the top 30 genres will be selected to test out the recommender system and shared with other Spotify users to get feedback on how similar the songs in the playlist are.
 
 ## **Executive Summary**
 
+The Kaggle Spotify Dataset consists of over 170,000 tracks, including songs, audiobooks and podcasts. As of 29 April 2021, the most updated dataset (version 15) consists of around 600,000 tracks, so to access the dataset I used in this project, do use version 11 found <a href="https://www.kaggle.com/yamaerenay/spotify-dataset-19212020-160k-tracks/version/11">here.</a>
 
+There are 2 main files explored in this project:
+- Data: consisting of all songs, their musical features, popularity score and release date
+- Data by genres: consisting of all genres and the average score of the musical features of all songs belonging to these genres.
+
+More emphasis was placed on the cleaning and exploration of the data file as it contained all songs with our target variable (popularity). We began by dropping all duplicated songs with the same ID and musical features, as well as removing audiobooks, podcasts and <a href="https://www.whathifi.com/features/25-best-tracks-testing-bass">bass testing songs</a> from the dataset as we do not want these to influence the modelling and song recommendation processes. In addition, given that most recent songs typically have a duration of up to <a href="https://www.dancemusicnw.com/science-behind-shorter-songs-2019/">5 minutes</a>, it was decided that songs which are too long would be dropped as well (the song November Rain - 8.93 mins was used as our reference point to provide some variety in the model). With this, the initial 175,000 songs was reduced to around 160,000.
+
+For the data analysis process, the key musical features (acousicness, danceability, energy, instrumentalness, liveness, loudness, speechiness, tempo and valence) over the years to ascertain their relationship with a song's popularity, and to determine how music has evolved over the decades. After conducting time series analysis on these features, these relationships became more pronounced and we were able to obtain more meaningful results.
+
+To provide context on how Spotify calculates the "popularity" score: "The popularity is calculated by algorithm and is based, in the most part, on the total number of plays the track has had and how recent those plays are" (<a href="https://help.musicinsights.com/hc/en-us/articles/360049246653-What-is-the-Spotify-Popularity-Score-#:~:text=The%20score%20is%20received%20from,how%20recent%20those%20plays%20are.">source</a>). Thus, it would be expected that recent songs would by and large have a higher popularity score compared to older songs (eg. from 1920s/1930s). We want the popularity to be based off muscical features purely, thus the "year" feature was dropped from the modelling process. Finally, an arbitrary threshold of 0.70 was set as the minimum for a song to be considered "popular". This made up only 2.6% of our dataset.
+
+The following features considered were: 'acousticness', 'danceability', 'duration_mins', 'energy', 'instrumentalness', 'liveness', 'loudness', 'speechiness', 'tempo', 'valence'
+
+These were then fed into the modelling process. To account for the imbalanced classes, we re-sampled the positive popular classes using SMOTE. The models used were:
+
+- Logistic Regression
+- K Nearest Neighbors
+- Random Forest
+- XGBoost
+
+Hyperparameter tuning was done to obtain the best training and cross-validated scores for each pipeline. We then used the best model to find the classification metrics and compared them against an AUC (Area Under The Curve) ROC (Receiver Operating Characteristics) curve to determine the model's ability to distinguish between popular and non-popular songs. Due to the immense size of the dataset, the dataset was broken up into 2 parts (1980 to 1999, and 2000 - 2021) to gain a clearer picture of which musical features contributed to the popularity of songs in the last 40 years.
+
+Finally, the song recommendation system was built on a smaller subset of the dataset - only songs from 2000 onwards were used, giving us around 36,000 songs. This was due to computational constraints (over 200GB of RAM required for 160,000 songs), as well as the fact that the more recent songs were created with better thought and instruments, and are generally more diverse.
 
 ## **Data Dictionary**
 
@@ -43,3 +65,6 @@ These features and their descriptions are taken from <a href="https://developer.
 |**Key**|Integer|Key the track is in. Integers map to pitches using standard Pitch Class notation|0 to 11|
 |**Artists**|Object|The artists of the album|---|
 |**release_date**|Object|Date album was first released (yyyy-mm-dd)|1920 to 2021|
+
+
+## **Evaluation and Conclusions**
