@@ -67,4 +67,21 @@ These features and their descriptions are taken from <a href="https://developer.
 |**release_date**|Object|Date album was first released (yyyy-mm-dd)|1920 to 2021|
 
 
-## **Evaluation and Conclusions**
+## **Model Evaluation**
+
+
+
+
+## **Song Recommender Evaluation**
+
+Using the cosine similarity matrix, we were able to build playlists of songs whose musical features were the most similar to the genres selected (Top 30 genres in this case). Upon further inspection of the playlists, we note that the songs recommended may not necessarily have been of the same genre, despite having similar musical features. For example, Katy Perry's track "Last Friday Night" is clearly a pop song, yet it was recommended in the Scandinavian R&B playlist, or how Eminem's rap hit "Sing For The moment" was considered similar to the Swedish Tropical House genre.
+
+This leads us to conclude that although songs may be categorised in a particular genre, their musical features could be similar to songs of another genre.
+
+In general, the playlists that generated the most similar songs tended tp be from the pop genres. For example, in the Mexican Pop Punk playlist, close to 50% of the songs could be classified as pop, despite being part of other genres as well. <a href="https://carrieunderwood.fandom.com/wiki/Country_Music">Carrie Underwood</a> and <a href="https://www.allmusic.com/artist/sam-hunt-mn0002674420/biography">Sam Hunt</a> and <a href="https://theboot.com/top-sara-evans-songs/">Sara Evans</a> typically associated with country music yet their music is generally defined as country pop.
+
+Overall, we see that the evolution of music has blurred the lines between the genres of music, meaning that songs traditionally classified as pop could also fall under indie - creating the subgenre Indie Pop. We can also point towards playlists such as Indonesian R&B which consists of mostly English songs but also contains Thai and Korean songs! From this, we see that musical features are language-agnostic and it is possible to be recommended songs which may not necessarily be from that genre, but they have similar musical features to that genre.
+
+In conclusion, music is fluid where genres transcend languages and music transcends the genres that define them. While recommending music similar to one genre, we may inadvertently recommend songs whose features are similar to other genres.
+
+## **Conclusion** 
