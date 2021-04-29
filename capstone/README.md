@@ -69,10 +69,11 @@ These features and their descriptions are taken from <a href="https://developer.
 
 ## **Model Evaluation**
 
+For years 1980-1999, logistic regression with SMOTE was the best performing model with a test accuracy of 0.702, test AUC of 0.631 and recall of 0.660.
 
+For years 2000 onwards, XGBoost with SMOTE was the best performing model with a test accuracy of 0.802, test AUC of 0.716 and recall of 0.678. We also see how the musical features have evolved over the decades and how the preferences of listeners have changed over time. From the feature importances, instrumentalness, followed by song duration, energy, danceability and valence would be the most important predictors for popularity.
 
-
-## **Song Recommender Evaluation**
+## **Song Recommender Evaluation & Conclusion**
 
 Using the cosine similarity matrix, we were able to build playlists of songs whose musical features were the most similar to the genres selected (Top 30 genres in this case). Upon further inspection of the playlists, we note that the songs recommended may not necessarily have been of the same genre, despite having similar musical features. For example, Katy Perry's track "Last Friday Night" is clearly a pop song, yet it was recommended in the Scandinavian R&B playlist, or how Eminem's rap hit "Sing For The moment" was considered similar to the Swedish Tropical House genre.
 
@@ -83,5 +84,3 @@ In general, the playlists that generated the most similar songs tended tp be fro
 Overall, we see that the evolution of music has blurred the lines between the genres of music, meaning that songs traditionally classified as pop could also fall under indie - creating the subgenre Indie Pop. We can also point towards playlists such as Indonesian R&B which consists of mostly English songs but also contains Thai and Korean songs! From this, we see that musical features are language-agnostic and it is possible to be recommended songs which may not necessarily be from that genre, but they have similar musical features to that genre.
 
 In conclusion, music is fluid where genres transcend languages and music transcends the genres that define them. While recommending music similar to one genre, we may inadvertently recommend songs whose features are similar to other genres.
-
-## **Conclusion** 
