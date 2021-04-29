@@ -54,7 +54,7 @@ These features and their descriptions are taken from <a href="https://developer.
 |**Duration_mins**|Float|Song length in minutes|----|
 |**Instrumentalness**|Float|Predicts whether a track contains no vocals. “Ooh” and “aah” sounds are treated as instrumental in this context. Rap or spoken word tracks are clearly “vocal”. The closer the instrumentalness value is to 1.0, the greater likelihood the track contains no vocal content. Values above 0.5 are intended to represent instrumental tracks, but confidence is higher as the value approaches 1.0.|0.0 to 1.0|
 |**Valence**|Float|A measure describing the musical positiveness conveyed by a track. Tracks with high valence sound more positive (e.g. happy, cheerful, euphoric), while tracks with low valence sound more negative (e.g. sad, depressed, angry|0.0 to 1.0|
-|**Popularity**|Integer|Popularity of a track|Minutes|
+|**Popularity**|Integer|Popularity of a track|0 to 100|
 |**Tempo**|Float|The overall estimated tempo of a track in beats per minute (BPM). In musical terminology, tempo is the speed or pace of a given piece and derives directly from the average beat duration.|0.0 to 100|
 |**Liveness**|Float|Detects the presence of an audience in the recording. Higher liveness values represent an increased probability that the track was performed live. A value above 0.8 provides strong likelihood that the track is live.|0.0 to 1|
 |**Loudness**|Float|Overall loudness of a track in decibels (dB). Loudness values are averaged across the entire track and are useful for comparing relative loudness of tracks. Loudness is the quality of a sound that is the primary psychological correlate of physical strength (amplitude).||-60 to 0 db.
