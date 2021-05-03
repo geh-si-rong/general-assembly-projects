@@ -1,5 +1,5 @@
 # general-assembly-projects
 
-Hello, my name is Ted and I'm a student of General Assembly's Data Science Immersive 20.
+My name is Si Rong and I'm a graduate from General Assembly's Data Science Immersive boot camp. 
 
-This is a repository containing all my projects done together with GA.
+This is a repository containing my portfolio of projects completed with this institution. 
